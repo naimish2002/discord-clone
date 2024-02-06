@@ -24,7 +24,7 @@ const NavigationSideBar = async () => {
   return (
     <div className='space-y-4 flex flex-col items-center h-full w-full text-primary dark:bg-[#1E1F22] py-3'>
       <NavigationAction />
-      <Separator className='h-[2px] w-10 mx-auto bg-zinc-300 dark:bg-zinc-700 rounded-md' />
+      <Separator className='nevigation-sidebar_separator' />
       <ScrollArea className='flex-1 w-full'>
         {servers.map((server) => (
             <div key={server.id} className='mb-4'>

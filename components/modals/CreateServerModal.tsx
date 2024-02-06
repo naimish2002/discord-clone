@@ -21,23 +21,21 @@ import { Button } from '@/components/ui/button';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useEffect, useState } from 'react';
 import { FileUpload } from '@/components/file-upload';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { useModal } from '@/hooks/useModalStore';
 
 const formSchema = z.object({
   name: z.string().min(1, { message: 'Server name is required' }),
   imageUrl: z.string().min(1, { message: 'Image is required' }),
 });
 
-export const InitialModel = () => {
+export const CreateServerModal = () => {
   const router = useRouter();
-  const [isMounted, setIsMounted] = useState(false);
+  const {isOpen, onClose, type} = useModal();
+  const isModalOpen = isOpen && type === 'createServer';
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,20 +46,23 @@ export const InitialModel = () => {
 
   const isLoading = form.formState.isSubmitting;
 
+  const handleClose = () => {
+    form.reset();
+    onClose();
+  }
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.post('/api/servers', values);
       form.reset();
       router.refresh();
-      window.location.reload();
+      onClose();
     } catch (error) {
       console.error(error);
     }
   };
-
-  if (!isMounted) return null;
   return (
-    <Dialog open>
+    <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className='bg-white text-black p-0 overflow-hidden'>
         <DialogHeader className='pt-8 px-6'>
           <DialogTitle className='text-2xl text-center font-bold'>
@@ -98,13 +99,13 @@ export const InitialModel = () => {
                 name='name'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className='initial-modal_label'>
+                    <FormLabel className='create-server_label'>
                       Server name
                     </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isLoading}
-                        className='initial-modal_input'
+                        className='create-server_input'
                         placeholder='Enter a server name'
                         {...field}
                       />
