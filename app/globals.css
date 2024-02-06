@@ -128,4 +128,8 @@ body,
   .server_header-dropdown-item {
     @apply px-3 py-2 text-sm cursor-pointer !important;
   }
+
+  .create-channel_select-trigger {
+    @apply bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 capitalize outline-none !important;
+  }
 }
