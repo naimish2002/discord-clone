@@ -27,24 +27,24 @@ const NavigationSideBar = async () => {
       <Separator className='nevigation-sidebar_separator' />
       <ScrollArea className='flex-1 w-full'>
         {servers.map((server) => (
-            <div key={server.id} className='mb-4'>
-                <NavigationItem
-                    id={server.id}
-                    name={server.name}
-                    imageUrl={server.imageUrl}
-                />
-            </div>
+          <div key={server.id} className='mb-4'>
+            <NavigationItem
+              id={server.id}
+              name={server.name}
+              imageUrl={server.imageUrl}
+            />
+          </div>
         ))}
       </ScrollArea>
       <div className='pb-3 mt-auto flex flex-col items-center gap-y-4'>
         <ModeToggle />
         <UserButton
-        afterSignOutUrl='/'
-        appearance={{
+          afterSignOutUrl='/'
+          appearance={{
             elements: {
-                avatarBox: 'h-[48px] w-[48px]'
-            }
-        }}
+              avatarBox: 'h-[48px] w-[48px]',
+            },
+          }}
         />
       </div>
     </div>

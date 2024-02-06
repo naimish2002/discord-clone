@@ -82,9 +82,9 @@ export const CreateChannelModal = () => {
   };
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
-      <DialogContent className='bg-white text-black p-0 overflow-hidden'>
+      <DialogContent className='bg-white dark:bg-[#313338] text-black dark:text-[#f2f3f5] p-0 overflow-hidden'>
         <DialogHeader className='pt-8 px-6'>
-          <DialogTitle className='text-2xl text-center font-bold'>
+          <DialogTitle className='text-2xl text-start font-bold'>
             Create Channel
           </DialogTitle>
         </DialogHeader>
@@ -145,7 +145,7 @@ export const CreateChannelModal = () => {
                 )}
               />
             </div>
-            <DialogFooter className='bg-gray-100 px-6 py-4'>
+            <DialogFooter className='bg-gray-100 dark:bg-[#2b2d31] px-6 py-4'>
               <Button disabled={isLoading} variant='primary'>
                 Create
               </Button>

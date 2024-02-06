@@ -33,7 +33,7 @@ const formSchema = z.object({
 
 export const CreateServerModal = () => {
   const router = useRouter();
-  const {isOpen, onClose, type} = useModal();
+  const { isOpen, onClose, type } = useModal();
   const isModalOpen = isOpen && type === 'createServer';
 
   const form = useForm({
@@ -49,7 +49,7 @@ export const CreateServerModal = () => {
   const handleClose = () => {
     form.reset();
     onClose();
-  }
+  };
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
@@ -63,12 +63,12 @@ export const CreateServerModal = () => {
   };
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
-      <DialogContent className='bg-white text-black p-0 overflow-hidden'>
+      <DialogContent className='bg-white dark:bg-[#313338] text-black dark:text-[#f2f3f5] p-0 overflow-hidden'>
         <DialogHeader className='pt-8 px-6'>
           <DialogTitle className='text-2xl text-center font-bold'>
             Create your server
           </DialogTitle>
-          <DialogDescription className='text-center text-zinc-500'>
+          <DialogDescription className='text-center text-zinc-500 dark:text-[#dbdee1]'>
             Give your new server a personality with a name and an icon. You can
             always change it later.
           </DialogDescription>
@@ -78,19 +78,19 @@ export const CreateServerModal = () => {
             <div className='space-y-8 px-6'>
               <div className='flex items-center justify-center text-center'>
                 <FormField
-                control={form.control}
-                name='imageUrl'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <FileUpload
-                      endpoint="serverImage"
-                      value={field.value}
-                      onChange={field.onChange}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
+                  control={form.control}
+                  name='imageUrl'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <FileUpload
+                          endpoint='serverImage'
+                          value={field.value}
+                          onChange={field.onChange}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
                 />
               </div>
 
@@ -115,7 +115,7 @@ export const CreateServerModal = () => {
                 )}
               />
             </div>
-            <DialogFooter className='bg-gray-100 px-6 py-4'>
+            <DialogFooter className='bg-gray-100 dark:bg-[#2b2d31] px-6 py-4'>
               <Button disabled={isLoading} variant='primary'>
                 Create
               </Button>

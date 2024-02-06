@@ -73,13 +73,13 @@ export const EditServerModal = () => {
   };
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
-      <DialogContent className='bg-white text-black p-0 overflow-hidden'>
+      <DialogContent className='bg-white dark:bg-[#313338] text-black dark:text-[#f2f3f5] p-0 overflow-hidden'>
         <DialogHeader className='pt-8 px-6'>
-          <DialogTitle className='text-2xl text-center font-bold'>
-            Create your server
+          <DialogTitle className='text-2xl text-start font-bold'>
+            Edit your server
           </DialogTitle>
-          <DialogDescription className='text-center text-zinc-500'>
-            Give your new server a personality with a name and an icon. You can
+          <DialogDescription className='text-justify text-zinc-500 dark:text-[#dbdee1]'>
+            Give your server a personality with a name and an icon. You can
             always change it later.
           </DialogDescription>
         </DialogHeader>
@@ -125,7 +125,7 @@ export const EditServerModal = () => {
                 )}
               />
             </div>
-            <DialogFooter className='bg-gray-100 px-6 py-4'>
+            <DialogFooter className='bg-gray-100 dark:bg-[#2b2d31] px-6 py-4'>
               <Button disabled={isLoading} variant='primary'>
                 Save
               </Button>

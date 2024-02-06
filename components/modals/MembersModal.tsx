@@ -95,12 +95,12 @@ export const MembersModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
-      <DialogContent className='bg-white text-black overflow-hidden'>
+      <DialogContent className='bg-white dark:bg-[#313338] text-black dark:text-[#f2f3f5] overflow-hidden'>
         <DialogHeader>
           <DialogTitle className='text-2xl text-center font-bold'>
             Manage Members
           </DialogTitle>
-          <DialogDescription className='text-center text-zinc-500'>
+          <DialogDescription className='text-center text-zinc-500 dark:text-[#dbdee1]'>
             {server?.members?.length} Members
           </DialogDescription>
         </DialogHeader>
@@ -114,14 +114,16 @@ export const MembersModal = () => {
                   {member.profile.name}
                   {roleIcons[member.role]}
                 </div>
-                <p className='text-xs text-zinc-500'>{member.profile.email}</p>
+                <p className='text-xs text-zinc-500 dark:text-[#dbdee1]'>
+                  {member.profile.email}
+                </p>
               </div>
               {server.profileId !== member.profileId &&
                 loadingId !== member.id && (
                   <div className='ml-auto'>
                     <DropdownMenu>
                       <DropdownMenuTrigger>
-                        <MoreVertical className='h-4 w-4 text-zinc-500' />
+                        <MoreVertical className='h-4 w-4 text-zinc-500 dark:text-[#dbdee1]' />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent side='left'>
                         <DropdownMenuSub>
@@ -165,7 +167,7 @@ export const MembersModal = () => {
                   </div>
                 )}
               {loadingId === member.id && (
-                <Loader2 className='animiate-spin text-zinc-500 ml-auto w-4 h-4' />
+                <Loader2 className='animiate-spin text-zinc-500 dark:text-[#dbdee1] ml-auto w-4 h-4' />
               )}
             </div>
           ))}

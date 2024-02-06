@@ -6,6 +6,7 @@ html,
 body,
 :root {
   height: 100%;
+  @apply tracking-wide;
 }
 
 @layer base {
@@ -85,12 +86,12 @@ body,
   /* Initial Modal &&Create Server Modal */
   .initial-modal_label,
   .create-server_label {
-    @apply uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70 !important;
+    @apply uppercase text-xs font-bold text-zinc-500 dark:text-[#dbdee1] !important;
   }
 
   .initial-modal_input,
   .create-server_input {
-    @apply bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0 !important;
+    @apply bg-zinc-300/50 dark:bg-[#1e1f22] border-0 focus-visible:ring-0 text-black dark:text-[#f2f3f5] focus-visible:ring-offset-0 !important;
   }
 
   /* File Upload */
@@ -100,7 +101,7 @@ body,
 
   /* Navigation */
   .navigation-action_add-btn {
-    @apply flex items-center justify-center bg-background dark:bg-neutral-700 group-hover:bg-emerald-500 mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden  !important;
+    @apply flex items-center justify-center bg-background dark:bg-neutral-700 group-hover:bg-green-500 mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden  !important;
   }
 
   .nevigation-sidebar_separator {
@@ -125,11 +126,21 @@ body,
     @apply w-56 text-xs font-medium text-black dark:text-neutral-400 space-y-[2xl] !important;
   }
 
-  .server_header-dropdown-item {
-    @apply px-3 py-2 text-sm cursor-pointer !important;
+  .server-header_dropdown-item {
+    @apply px-3 py-2 text-sm cursor-pointer hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white !important;
   }
 
+  .server-header_dropdown-delete {
+    @apply px-3 py-2 text-sm cursor-pointer text-red-600 dark:text-red-500 hover:bg-red-600 dark:hover:bg-red-500  hover:text-white dark:hover:text-white !important;
+  }
+
+  /* Create Channel */
   .create-channel_select-trigger {
-    @apply bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 capitalize outline-none !important;
+    @apply bg-zinc-300/50 dark:bg-[#1e1f22] border-0 focus:ring-0 text-black dark:text-[#f2f3f5] ring-offset-0 capitalize outline-none !important;
+  }
+
+  /* Leave Server */
+  .leave-server_cancel-btn {
+    @apply hover:underline focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 focus-visible:underline !important;
   }
 }

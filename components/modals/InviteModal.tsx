@@ -16,7 +16,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 export const InviteModal = () => {
-  const { onOpen,isOpen, onClose, type, data } = useModal();
+  const { onOpen, isOpen, onClose, type, data } = useModal();
   const origin = useOrigin();
 
   const [copied, setCopied] = useState(false);
@@ -40,7 +40,7 @@ export const InviteModal = () => {
       setIsLoading(true);
       const res = await axios.patch(`/api/servers/${server?.id}/invite-code`);
 
-      onOpen('invite', {server: res.data})
+      onOpen('invite', { server: res.data });
     } catch (error) {
       console.error(error);
     } finally {
@@ -50,7 +50,7 @@ export const InviteModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
-      <DialogContent className='bg-white text-black p-0 overflow-hidden'>
+      <DialogContent className='bg-white dark:bg-[#313338] text-black dark:text-[#f2f3f5] p-0 overflow-hidden'>
         <DialogHeader className='pt-8 px-6'>
           <DialogTitle className='text-2xl text-center font-bold'>
             Invite Friends
@@ -58,18 +58,22 @@ export const InviteModal = () => {
         </DialogHeader>
 
         <div className='p-6'>
-          <Label className='uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70'>
+          <Label className='uppercase text-xs font-bold text-zinc-500 dark:text-[#dbdee1]'>
             Server invite Link
           </Label>
           <div className='flex items-center mt-2 gap-x-2'>
             <Input
-            disabled={isLoading}
-              className='bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0'
+              disabled={isLoading}
+              className='bg-zinc-300/50 dark:bg-[#1e1f22] border-0 focus-visible:ring-0 text-black dark:text-[#f2f3f5] focus-visible:ring-offset-0'
               value={inviteUrl}
             />
-            <Button size='icon' onClick={onCopy} disabled={isLoading}>
+            <Button
+              size='icon'
+              onClick={onCopy}
+              disabled={isLoading}
+              className='bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700'>
               {copied ? (
-                <Check className='w-4 h-4 text-emerald-600' />
+                <Check className='w-4 h-4 text-green-600' />
               ) : (
                 <Copy className='w-4 h-4 text-indigo-600' />
               )}
@@ -78,10 +82,9 @@ export const InviteModal = () => {
           <Button
             variant='link'
             size='sm'
-            className='text-xs text-zinc-500 mt-4'
+            className='text-xs text-zinc-500 dark:text-[#dbdee1] mt-4'
             disabled={isLoading}
-            onClick={onGenerateLink}
-            >
+            onClick={onGenerateLink}>
             Generate a new link
             <RefreshCw className='w-4 h-4 ml-2' />
           </Button>

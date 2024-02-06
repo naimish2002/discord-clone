@@ -41,13 +41,13 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         {isModerator && (
           <>
             <DropdownMenuItem
-              className='server_header-dropdown-item text-indigo-600 dark:text-indigo-400'
+              className='server-header_dropdown-item  text-indigo-600 dark:text-indigo-400'
               onClick={() => onOpen('invite', { server })}>
               Invite People
               <UserPlus className='h-4 w-4 ml-auto' />
             </DropdownMenuItem>
             <DropdownMenuItem
-              className='server_header-dropdown-item'
+              className='server-header_dropdown-item'
               onClick={() => onOpen('createChannel', { server })}>
               Create Channel
               <PlusCircle className='h-4 w-4 ml-auto' />
@@ -57,13 +57,13 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         {isAdmin && (
           <>
             <DropdownMenuItem
-              className='server_header-dropdown-item'
+              className='server-header_dropdown-item'
               onClick={() => onOpen('editServer', { server })}>
               Server Settings
               <Settings className='h-4 w-4 ml-auto' />
             </DropdownMenuItem>
             <DropdownMenuItem
-              className='server_header-dropdown-item'
+              className='server-header_dropdown-item'
               onClick={() => onOpen('members', { server })}>
               Manage Members
               <Users className='h-4 w-4 ml-auto' />
@@ -72,13 +72,17 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {isModerator && <DropdownMenuSeparator />}
         {isAdmin && (
-          <DropdownMenuItem className='server_header-dropdown-item text-rose-600 dark:text-rose-500'>
+          <DropdownMenuItem
+            className='server-header_dropdown-delete'
+            onClick={() => onOpen('deleteServer', { server })}>
             Delete Server
             <Trash className='h-4 w-4 ml-auto' />
           </DropdownMenuItem>
         )}
         {!isAdmin && (
-          <DropdownMenuItem className='server_header-dropdown-item text-rose-600 dark:text-rose-500'>
+          <DropdownMenuItem
+            className='server-header_dropdown-delete'
+            onClick={() => onOpen('leaveServer', { server })}>
             Leave Server
             <LogOut className='h-4 w-4 ml-auto' />
           </DropdownMenuItem>
