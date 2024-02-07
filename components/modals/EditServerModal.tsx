@@ -127,7 +127,7 @@ export const EditServerModal = () => {
             </div>
             <DialogFooter className='bg-gray-100 dark:bg-[#2b2d31] px-6 py-4'>
               <Button disabled={isLoading} variant='primary'>
-                Save
+                Save Changes
               </Button>
             </DialogFooter>
           </form>
