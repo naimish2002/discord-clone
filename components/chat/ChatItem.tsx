@@ -161,6 +161,7 @@ export const ChatItem = ({
                 src={fileUrl}
                 alt={content}
                 fill
+                sizes='auto'
                 className='object-cover'
               />
             </a>
