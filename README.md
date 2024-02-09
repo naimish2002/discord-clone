@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Discord Clone
 
-## Getting Started
+This project is a Discord clone that allows users to send messages, attachments, and create channels. It also supports 1:1 video calls and conversations, and offers a beautiful UI that is fully responsive.
 
-First, run the development server:
+## 📦 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [![Next.js](https://img.shields.io/badge/Next.js-Server--side%20Rendering-lightgrey)](https://nextjs.org/)
+- [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Styling-blue)](https://tailwindcss.com/)
+- [![TypeScript](https://img.shields.io/badge/TypeScript-Language-blueviolet)](https://www.typescriptlang.org/)
+- [![ShadcnUI](https://img.shields.io/badge/ShadcnUI-UI%20Components-brightgreen)](https://shadcn.com/)
+- [![Socket.io](https://img.shields.io/badge/Socket.io-Real--time%20Messaging-orange)](https://socket.io/)
+- [![LiveKit](https://img.shields.io/badge/LiveKit-Video%20Calls-yellow)](https://livekit.io/)
+- [![Prisma](https://img.shields.io/badge/Prisma-ORM-blue)](https://www.prisma.io/)
+- [![Clerk](https://img.shields.io/badge/Clerk-Authentication-red)](https://clerk.dev/)
+- [![UploadThing](https://img.shields.io/badge/UploadThing-File%20Uploads-lightgrey)](https://uploadthingy.com/)
+- [![tanstack/query](https://img.shields.io/badge/tanstack%2Fquery-Infinite%20Loading-green)](https://tanstack.com/query/)
+- [![MongoDB](https://img.shields.io/badge/MongoDB-Database-success)](https://www.mongodb.com/)
+- [![Node.js](https://img.shields.io/badge/Node.js-Backend-brightgreen)](https://nodejs.org/)
+- [![Websockets](https://img.shields.io/badge/Websockets-Real--time%20Communication-9cf)](https://en.wikipedia.org/wiki/WebSocket)
+
+## 👩🏽‍🍳 Features
+
+- Real-time messaging using Socket.io
+- Send attachments as messages using UploadThing
+- Delete & Edit messages in real time for all users
+- Create Text, Audio, and Video call Channels
+- 1:1 conversation between members
+- 1:1 video calls between members
+- Member management (Kick, Role change Guest / Moderator)
+- Unique invite link generation & full working invite system
+- Infinite loading for messages in batches of 10 (tanstack/query)
+- Server creation and customization
+- Beautiful UI using TailwindCSS and ShadcnUI
+- Full responsivity and mobile UI
+- Light / Dark mode
+- Websocket fallback: Polling with alerts
+- ORM using Prisma
+- MongoDB database
+- Authentication with Clerk
+
+## 📚 Learnings
+
+- Utilizing Next.js for server-side rendering
+- Implementing TailwindCSS for styling
+- Integrating Clerk for authentication
+- Working with Prisma for ORM
+- Using Socket.io for real-time messaging
+- Incorporating LiveKit for video calls
+- Managing file uploads with UploadThing
+- Implementing infinite loading of messages using tanstack/query
+
+## Installation
+
+### Prerequisites
+
+- Node version 18.x.x
+
+### Cloning the repository
+```
+git clone https://github.com/naimish2002/discord-clone.git
+```
+### Install packages
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run this project, you will need to add the following environment variables to your .env file
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Setup .env file
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
+DATABASE_URL=
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+NEXT_PUBLIC_LIVEKIT_URL=
+```
 
-## Learn More
+### Setup Prisma
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ensure MongoDB database is configured, then run:
+```
+npx prisma generate
+npx prisma db push
+```
+### Start the app
+```
+npm run dev
+```
