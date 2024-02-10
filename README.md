@@ -1,3 +1,6 @@
+<img src="https://github.com/naimish2002/discord-clone/assets/57554170/f925a25c-c217-41c4-84b3-14b14b5d95b9" alt="discord clone"  />
+
+
 # 🚀 Discord Clone
 
 This project is a Discord clone that allows users to send messages, attachments, and create channels. It also supports 1:1 video calls and conversations, and offers a beautiful UI that is fully responsive.
@@ -17,6 +20,20 @@ This project is a Discord clone that allows users to send messages, attachments,
 - [![MongoDB](https://img.shields.io/badge/MongoDB-Database-success)](https://www.mongodb.com/)
 - [![Node.js](https://img.shields.io/badge/Node.js-Backend-brightgreen)](https://nodejs.org/)
 - [![Websockets](https://img.shields.io/badge/Websockets-Real--time%20Communication-9cf)](https://en.wikipedia.org/wiki/WebSocket)
+
+  ## 📦 Screenshots
+  <div style={{"display": "flex", "flex-direction": "column"}}>
+  <div style={{"display": "flex"}}>
+  <img src="https://github.com/naimish2002/discord-clone/assets/57554170/55b170f5-49ea-4fba-992a-b66d2617491e" alt="sign in" height="50%" width="49%"  />
+  <img src="https://github.com/naimish2002/discord-clone/assets/57554170/885b5f3c-5886-47bf-a732-49909e90c788" alt="sign up" height="50%" width="49%"  />
+  </div>
+  <div style={{"display": "flex"}}>
+  <img src="https://github.com/naimish2002/discord-clone/assets/57554170/7a550356-bd8d-474c-8135-991e56ab85e5" alt="home" height="50%" width="49%"  />
+  <img src="https://github.com/naimish2002/discord-clone/assets/57554170/602773b5-69e9-4113-a377-1e096343b9ab" alt="create server" height="50%" width="49%"  />
+  </div>
+  <img src="https://github.com/naimish2002/discord-clone/assets/57554170/eddcc30d-ccc8-427a-a23e-6812d9953197" alt="search" height="50%" width="49%" align="center"  />
+
+  </div>
 
 ## 👩🏽‍🍳 Features
 
